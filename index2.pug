@@ -1,0 +1,136 @@
+
+// codigo java script en pug
+// code buffered (si sale HTML)
+// code unbuffered (no sale html)
+
+- let currentPage = 'home'
+- let name = "Eduardo Rodriguez"
+- 
+    let underPunkSoft = {
+        ceo: 'Eduardo',
+        cto: 'Calvin Klain'
+
+    }
+body(class= currentPage).main-page.login 
+p= `${underPunkSoft.cto}, Programador Web`
+
+//
+//
+//condicionales 
+- var cto ='alexia'
+
+if cto === 'alexia'
+    p UnderPunk tiene CTO
+
+else 
+    p UnderPunk no tiene CTO 
+
+
+
+
+if 10 > 4
+    p aqui estoy perra
+
+else 
+    p quiero helado perra
+
+
+// 
+//ciclos (iteraciones)
+
+- var days = ['lunes','martes','miercoles']
+
+each day, i in days
+    p= `${day.toUpperCase()} es el dia ${i+1}`
+
+    //
+    //
+
+- pages = ['home','quienes somos','contacto']
+
+ul
+    each page in pages
+        li: a(href=`${page.split(' ').join('-')}.html`)
+        = page
+    else 
+        li no hay elementos disponibles por el momento
+
+        
+
+
+
+
+- 
+    const UnderPunk = {
+        ceo: 'Eduardo',
+        cto: 'Kalvin',
+        coo: 'el tachas'
+
+    }
+
+ul 
+    each val, key in UnderPunk
+        li= `${val} es el ${key.toUpperCase()} de  UnderPunk` 
+
+
+//
+//
+//
+
+- 
+    var pages = [
+        {
+            title: 'home',
+            url: 'index.html',
+            child: []
+
+        },
+        {
+            title: 'services',
+            url: 'services.html',
+            child: [
+                {
+                    title: 'web desing',
+                    url: 'web-desing.html'
+                },
+                {
+                    title: 'SEO',
+                    url: 'seo.html'
+                }
+            ]
+        },
+        {
+            title: 'contact us',
+            url: 'contact.html',
+            child: []
+        }
+
+    ]
+
+ul 
+    each page in pages
+            li 
+                a(href= page.url)= page.title
+                if page.child.length > 0
+                    ul
+                        each subPage in page.child
+                            li: a(href= subPage.url)=  subPage.title
+                        
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
